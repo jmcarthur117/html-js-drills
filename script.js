@@ -22,12 +22,29 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'The Rock';
+  nameElement.style.color = 'red';
 }
 
 function addFavoriteThings() {
   console.log('Called addFavoriteThings()');
 
+  let potatoTime = document.querySelector('#favthings');
+  console.log('potatoTimeIncoming');
+  console.log(potatoTime);
+  var listItem = document.createElement("li");   // Create a <button> element
+  listItem.innerHTML = "Working Out";                   // Insert text
+  potatoTime.appendChild(listItem);
+  var listItem = document.createElement("li");   // Create a <button> element
+  listItem.innerHTML = "Wrestling";                   // Insert text
+  potatoTime.appendChild(listItem);
+  var listItem = document.createElement("li");   // Create a <button> element
+  listItem.innerHTML = "Acting";                   // Insert text
+  potatoTime.appendChild(listItem);
+  var listItem = document.createElement("li");   // Create a <button> element
+  listItem.innerHTML = "B Movies";                   // Insert text
+  potatoTime.appendChild(listItem);
+  // Append <button> to <body>
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
   // 3. Add them to append them to favthings
@@ -36,10 +53,16 @@ function addFavoriteThings() {
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
   //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+
 }
 
 function replaceImage() {
   console.log('Called replaceImage()');
+
+  let newImage = document.querySelector('#picture');
+  newImage.src = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2016%2F11%2Fthe-rock-71.jpg";
+  newImage.height = "300";
+  newImage.width = "300";
 
   // Change the puppy picture to a picture of your choosing
 
@@ -50,6 +73,11 @@ function replaceImage() {
 
 function changeCodeStatus() {
   console.log('Called changeCodeStatus()');
+
+  let theRock = document.querySelector('#codestatus');
+  console.log(theRock);
+  theRock.innerHTML = '<img src="https://i.pinimg.com/originals/66/49/99/66499908eacd17e67382895735e6959c.jpg" alt="The Rock" width="300" height="300">';
+  theRock.style.color = 'orange';
 
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
