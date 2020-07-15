@@ -176,18 +176,19 @@ consoleLogButton.addEventListener('click', function() {
   console.log('Change this text if you want!');
 });
 
+
 let makeBlueButton = document.querySelector('#make-blue-button');
 makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
   //  2. Change the text in <div id="colorText">...</div> to blue
 
-  document.getElementById("colorText").style.color = '#00008b';
+  document.getElementById("colorText").style.color = '#0000ff';
 });
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addeventListener('keydown', function() {
+document.addEventListener('keydown', function() {
   // This is called whenever a user pressed any key.
 
   // Your job:
@@ -198,14 +199,16 @@ document.addeventListener('keydown', function() {
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
 
-  //color change
-  if(event.code == 'KeyR') {
-      document.getElementById("colorText").style.color = '#800000';
-  }
-  if(event.code == "KeyG") {
-      document.getElementById("colorText").style.color = '#008000';
-  }
-
+    //Changes color of colorText to red
+    if(event.code == 'KeyR') {
+          document.getElementById("colorText").style.color = '#ff0000';
+    }
+    if(event.code == "KeyG") {
+          document.getElementById("colorText").style.color = '#00ff00';
+    }
+    if(event.code == "KeyY") {
+          document.getElementById("colorText").style.color = '#ffff00';
+    }
 });
 
 /*************************************
@@ -243,6 +246,18 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+let timer = setInterval(eachSecond, 1000);
+var time = 0;
+function eachSecond() {
+  time ++;
+  document.getElementById('seconds').innerText = time;
+}
+
+let delay = setTimeout(delayedDisplay, 10000);
+
+function delayedDisplay() {
+    document.getElementById('delayedDisplay').innerText = 'You stayed for 10 seconds.';
+}
 
 /****************************************
  * Section 6 - Your own section!        *
