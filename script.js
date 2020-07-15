@@ -229,6 +229,47 @@ document.addEventListener('keydown', function() {
 
 // Your code goes here
 
+function addToList(event) {
+  event.preventDefault();
+  let li = document.createElement('li');
+  let newTodo = document.getElementById('todo');
+  let submitTask = document.createTextNode(newtodo.value);
+
+  if (newtodo.value == '') {
+
+    alert("write something");
+  }
+  else{
+    li.appendChild(submitTask);
+    document.getElementById("todos").appendChild(li);
+    newtodo.value = '';
+  }
+
+
+var items = document.getElementsByTagName('li');
+for (var i=0; i < items.length; i++){
+  var span = document.createElement('span');
+  var txt = document.createTextNode("x");
+  span.className = "close";
+  span.appendChild(txt);
+  items[i].appendChild(span);
+}
+
+var close =document.getElementsByClassName('close');
+for (var i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+}
+
+//source:https://www.w3schools.com/howto/howto_js_todolist.asp
+
+let newItemAdd = document.querySelector('#todo-form');
+newItemAdd.addEventListener('submit', addToList);
+
 /****************************************
  * Section 5 - setInterval + setTimeout *
  ****************************************
