@@ -124,6 +124,35 @@ informationForm.addEventListener('submit', function(event) {
 
   // Google things like:
   //   javascript form element get values
+  let fname = document.getElementById('fname').value;
+  let lname = document.getElementById('lname').value;
+  let cars = document.getElementById('cars').value;
+  let icecreamyes = document.getElementById('icecreamyes').checked;
+  let human = document.getElementById('humancheck').checked;
+  let coder = document.getElementById('codercheck').checked;
+
+  document.getElementById('firstname').innerText = fname;
+  document.getElementById('lastname').innerText = lname;
+  document.getElementById('chosencar').innerText = cars;
+  if(icecreamyes) {
+    document.getElementById('icecreamstatus').innerText = 'Yes';
+  }
+  else {
+    document.getElementById('icecreamstatus').innerText = 'No';
+  }
+
+  if(human) {
+    if(coder) {
+          document.getElementById('checks').innerText = 'Human, Coder';
+    }
+    else {
+      document.getElementById('checks').innerText = 'Human';
+    }
+  }
+  else if(coder) {
+        document.getElementById('checks').innerText = 'Coder';
+  }
+
 });
 
 /*************************************
@@ -139,18 +168,21 @@ informationForm.addEventListener('submit', function(event) {
 // then log something to the console
 
 // Fill in ________ to get a reference to the correct button on the page
-let consoleLogButton = document.querySelector('#________');
+let consoleLogButton = document.querySelector('#console-log-button');
 
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
+
   console.log('Change this text if you want!');
 });
 
-let makeBlueButton = document.querySelector('#________');
+let makeBlueButton = document.querySelector('#make-blue-button');
 makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
   //  2. Change the text in <div id="colorText">...</div> to blue
+
+  document.getElementById("colorText").style.color = '#00008b';
 });
 
 // Adding an event listener to document means the "keydown" event
@@ -165,6 +197,15 @@ document.addeventListener('keydown', function() {
   // See:
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
+
+  //color change
+  if(event.code == 'KeyR') {
+      document.getElementById("colorText").style.color = '#800000';
+  }
+  if(event.code == "KeyG") {
+      document.getElementById("colorText").style.color = '#008000';
+  }
+
 });
 
 /*************************************
