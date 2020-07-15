@@ -44,6 +44,9 @@ function addFavoriteThings() {
   var listItem = document.createElement("li");   // Create a <button> element
   listItem.innerHTML = "B Movies";                   // Insert text
   potatoTime.appendChild(listItem);
+  var listItem = document.createElement("li");   // Create a <button> element
+  listItem.innerHTML = "Fast cars";                   // Insert text
+  potatoTime.appendChild(listItem);
   // Append <button> to <body>
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
@@ -173,7 +176,7 @@ let consoleLogButton = document.querySelector('#console-log-button');
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
 
-  console.log('Change this text if you want!');
+  console.log('I changed it!');
 });
 
 let makeBlueButton = document.querySelector('#make-blue-button');
@@ -187,7 +190,7 @@ makeBlueButton.addEventListener('click', function() {
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addeventListener('keydown', function() {
+document.addEventListener ('keydown', function() {
   // This is called whenever a user pressed any key.
 
   // Your job:
@@ -199,10 +202,10 @@ document.addeventListener('keydown', function() {
   // - https://javascript.info/keyboard-events
 
   //color change
-  if(event.code == 'KeyR') {
+    if(event.code == 'KeyR') {
       document.getElementById("colorText").style.color = '#800000';
   }
-  if(event.code == "KeyG") {
+    if(event.code == "KeyG") {
       document.getElementById("colorText").style.color = '#008000';
   }
 
@@ -224,6 +227,19 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+
+let todList = document.querySelector('.form')
+
+todList.addEventListener('submit', function() {
+  event.preventDefault();
+
+  console.log('Form submitted!');
+
+let todoItem = document.getElementById('todo').value;
+
+document.getElementById('todos').innerText = todoItem;
+
+});
 
 /****************************************
  * Section 5 - setInterval + setTimeout *
