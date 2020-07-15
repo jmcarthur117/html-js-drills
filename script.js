@@ -44,9 +44,6 @@ function addFavoriteThings() {
   var listItem = document.createElement("li");   // Create a <button> element
   listItem.innerHTML = "B Movies";                   // Insert text
   potatoTime.appendChild(listItem);
-  var listItem = document.createElement("li");   // Create a <button> element
-  listItem.innerHTML = "Fast cars";                   // Insert text
-  potatoTime.appendChild(listItem);
   // Append <button> to <body>
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
@@ -176,8 +173,9 @@ let consoleLogButton = document.querySelector('#console-log-button');
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
 
-  console.log('I changed it!');
+  console.log('Change this text if you want!');
 });
+
 
 let makeBlueButton = document.querySelector('#make-blue-button');
 makeBlueButton.addEventListener('click', function() {
@@ -185,12 +183,12 @@ makeBlueButton.addEventListener('click', function() {
   //  1. When a user clicks "Change the text to the right blue"
   //  2. Change the text in <div id="colorText">...</div> to blue
 
-  document.getElementById("colorText").style.color = '#00008b';
+  document.getElementById("colorText").style.color = '#0000ff';
 });
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addEventListener ('keydown', function() {
+document.addEventListener('keydown', function() {
   // This is called whenever a user pressed any key.
 
   // Your job:
@@ -201,14 +199,16 @@ document.addEventListener ('keydown', function() {
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
 
-  //color change
+    //Changes color of colorText to red
     if(event.code == 'KeyR') {
-      document.getElementById("colorText").style.color = '#800000';
-  }
+          document.getElementById("colorText").style.color = '#ff0000';
+    }
     if(event.code == "KeyG") {
-      document.getElementById("colorText").style.color = '#008000';
-  }
-
+          document.getElementById("colorText").style.color = '#00ff00';
+    }
+    if(event.code == "KeyY") {
+          document.getElementById("colorText").style.color = '#ffff00';
+    }
 });
 
 /*************************************
@@ -228,19 +228,6 @@ document.addEventListener ('keydown', function() {
 
 // Your code goes here
 
-let todList = document.querySelector('.form')
-
-todList.addEventListener('submit', function() {
-  event.preventDefault();
-
-  console.log('Form submitted!');
-
-let todoItem = document.getElementById('todo').value;
-
-document.getElementById('todos').innerText = todoItem;
-
-});
-
 /****************************************
  * Section 5 - setInterval + setTimeout *
  ****************************************
@@ -259,6 +246,18 @@ document.getElementById('todos').innerText = todoItem;
  */
 
 // Your code goes here
+let timer = setInterval(eachSecond, 1000);
+var time = 0;
+function eachSecond() {
+  time ++;
+  document.getElementById('seconds').innerText = time;
+}
+
+let delay = setTimeout(delayedDisplay, 10000);
+
+function delayedDisplay() {
+    document.getElementById('delayedDisplay').innerText = 'You stayed for 10 seconds.';
+}
 
 /****************************************
  * Section 6 - Your own section!        *
