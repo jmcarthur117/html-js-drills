@@ -228,7 +228,18 @@ document.addEventListener('keydown', function() {
  */
 
 // Your code goes here
+let addItems = document.querySelector('.form');
 
+addItems.addEventListener('submit', function(){
+  event.preventDefault(); // Terra added this in section 2, go look there if confused
+  console.log('Item added'); //to keep track of it
+
+  let newToDoItem = document.createElement('li');
+  newToDoItem.textContent = document.querySelector('#toDoItem').value;
+
+  let toDoList = document.querySelector('#todos');
+  toDoList.appendChild(newToDoItem);
+});
 /****************************************
  * Section 5 - setInterval + setTimeout *
  ****************************************
